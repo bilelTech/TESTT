@@ -55,3 +55,16 @@
                     displayError(it)
                 }))
     }
+
+
+        private fun getPath(uri: Uri): String? {
+        if (uri.toString().isEmpty()) return ""
+        val projection = arrayOf(MediaStore.Images.Media.DATA)
+        val cursor: Cursor = context.contentResolver.query(uri, projection, null, null, null)
+                ?: return null
+        val column_index: Int = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+        cursor.moveToFirst()
+        val s: String = cursor.getString(column_index)
+        cursor.close()
+        return s
+    }
