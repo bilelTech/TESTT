@@ -1,4 +1,5 @@
 # TESTT
+https://chatgpt.com/share/69245fe9-0aac-8000-b3e2-f236b94ddbe3
     fun completeOrder(id: Int, photoCodeImg: String, barCodeImg: String, signImg: String, comment: String, barCode: String,paymentMethod: String,receiptImg: String) {
         val idRequest = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), "$id")
 
